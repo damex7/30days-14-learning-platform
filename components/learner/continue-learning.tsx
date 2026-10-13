@@ -1,4 +1,4 @@
-// CLIENT COMPONENT: enrolments live in localStorage (lib/progress.ts), which
+// CLIENT COMPONENT: enrollments live in localStorage (lib/progress.ts), which
 // only the browser can read. The course data arrives from the server as props.
 'use client'
 
