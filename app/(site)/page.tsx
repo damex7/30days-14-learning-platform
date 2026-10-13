@@ -88,7 +88,7 @@ export default async function HomePage() {
         <h2 id="categories-heading" className="text-2xl font-semibold sm:text-3xl">
           Browse by category
         </h2>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {categories.map((category) => (
             <li key={category.id}>
               <Link
@@ -132,7 +132,7 @@ export default async function HomePage() {
         <h2 id="instructors-heading" className="text-2xl font-semibold sm:text-3xl">
           Learn from practitioners
         </h2>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {instructors.map((instructor) => (
             <li key={instructor.id}>
               <Link

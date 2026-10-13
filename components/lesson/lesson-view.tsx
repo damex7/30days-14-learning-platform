@@ -39,7 +39,7 @@ function VideoLessonView({ lesson }: { lesson: VideoLesson }) {
   return (
     <div>
       {/* A placeholder, not a real player: video hosting is out of scope today. */}
-      <figure className="relative overflow-hidden rounded-card border border-line bg-brand text-brand-ink shadow-raised">
+      <figure className="relative overflow-hidden rounded-card border border-line bg-stage text-stage-ink shadow-raised">
         <div className="relative flex aspect-video flex-col items-center justify-center gap-3 p-6 text-center">
           <svg aria-hidden className="absolute inset-0 size-full opacity-15" preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -50,15 +50,15 @@ function VideoLessonView({ lesson }: { lesson: VideoLesson }) {
             </defs>
             <rect width="100%" height="100%" fill="url(#adire-player)" />
           </svg>
-          <span className="relative grid size-16 place-items-center rounded-pill bg-brand-ink/15 ring-2 ring-brand-ink/40">
+          <span className="relative grid size-16 place-items-center rounded-pill bg-stage-ink/15 ring-2 ring-stage-ink/40">
             <Icon name="play" className="size-7 translate-x-0.5" filled />
           </span>
           <p className="relative font-display text-lg font-semibold">Video placeholder</p>
           <p className="relative max-w-sm text-sm opacity-85">This demo has no video hosting yet. The full transcript is below.</p>
         </div>
-        <figcaption className="relative flex items-center justify-between gap-3 border-t border-brand-ink/20 bg-black/15 px-4 py-2 text-sm">
+        <figcaption className="relative flex items-center justify-between gap-3 border-t border-stage-ink/20 bg-black/20 px-4 py-2 text-sm">
           <span className="truncate">{lesson.title}</span>
-          <span className="font-mono tabular-nums">0:00 / {formatClock(lesson.durationSeconds)}</span>
+          <span className="shrink-0 font-mono whitespace-nowrap tabular-nums">0:00 / {formatClock(lesson.durationSeconds)}</span>
         </figcaption>
       </figure>
 

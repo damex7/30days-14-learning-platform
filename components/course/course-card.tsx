@@ -53,7 +53,7 @@ export function CourseCard({ course, headingLevel = 'h3' }: { course: CourseSumm
 
 export function CourseGrid({ courses, headingLevel }: { courses: readonly CourseSummary[]; headingLevel?: 'h2' | 'h3' }) {
   return (
-    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {courses.map((course) => (
         <li key={course.id} className="flex">
           <div className="flex w-full">

@@ -18,7 +18,9 @@ type Props = { courseId: CourseId; lessonId: LessonId; nextHref: string | null; 
 export function CompleteButton({ courseId, lessonId, nextHref, certificateHref }: Props) {
   const progress = useProgress()
   if (!progress) return <div className="skeleton h-11 w-48" aria-hidden />
-  if (!isEnrolled(progress.state, courseId)) return null
+  if (!isEnrolled(progress.state, courseId)) {
+    return <p className="text-sm text-muted">Enroll in this course to mark lessons complete and track your progress.</p>
+  }
 
   const complete = completedLessons(progress.state).has(lessonId)
   return (

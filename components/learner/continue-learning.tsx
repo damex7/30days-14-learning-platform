@@ -38,7 +38,7 @@ export function ContinueLearning({ outlines }: { outlines: readonly ProgressOutl
           My learning
         </Link>
       </div>
-      <ul className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {inProgress.map(({ outline, stats }) => (
           <li key={outline.id} className="flex gap-4 rounded-card border border-line bg-raised p-4 shadow-card">
             <CourseCover cover={outline.cover} className="hidden w-28 shrink-0 self-start rounded-control xs:block" />
