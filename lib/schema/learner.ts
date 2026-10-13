@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { AttemptIdSchema, CourseIdSchema, ISODateTimeSchema, LessonIdSchema, OptionIdSchema, QuestionIdSchema, QuizIdSchema } from '@/lib/schema/ids'
+import { AttemptIdSchema, CourseIdSchema, ISODateTimeSchema, LessonIdSchema, OptionIdSchema, QuestionIdSchema } from '@/lib/schema/ids'
 
 /*
   LEARNER RECORDS: what a learner has DONE.
@@ -41,7 +41,9 @@ export const LessonProgressSchema = z.object({
 
 export const QuizAttemptSchema = z.object({
   id: AttemptIdSchema,
-  quizId: QuizIdSchema,
+  // The quiz lesson that was attempted. Each quiz belongs to exactly one
+  // lesson (checked by `npm run check:data`), so the lesson identifies the
+  // quiz and we don't store a second ID that could disagree with it.
   lessonId: LessonIdSchema,
   // z.record(keySchema, valueSchema): an object used as a lookup table.
   // Its type is Record<QuestionId, Answer>. Unanswered questions are simply
