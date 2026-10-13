@@ -1,4 +1,4 @@
-// CLIENT COMPONENT: whether a lesson is unlocked depends on enrolment, which
+// CLIENT COMPONENT: whether a lesson is unlocked depends on enrollment, which
 // is stored in localStorage, and enrolling is a click.
 'use client'
 
@@ -26,7 +26,7 @@ type Props = {
   the server while one wrapper has state.
 
   (This is a demo gate in the browser, not security: without accounts there
-  is nothing to protect. On Day 16 the server checks enrolment instead.)
+  is nothing to protect. On Day 16 the server checks enrollment instead.)
 */
 export function LessonAccess({ courseId, courseSlug, priceKobo, isPreview, children }: Props) {
   const progress = useProgress()
@@ -41,7 +41,7 @@ export function LessonAccess({ courseId, courseSlug, priceKobo, isPreview, child
             <span>
               This lesson is a <strong>free preview</strong>.{' '}
               <Link href={`/courses/${courseSlug}`} className="font-semibold text-brand underline">
-                Enrol
+                Enroll
               </Link>{' '}
               to unlock the rest and save your progress.
             </span>
@@ -70,13 +70,13 @@ export function LessonAccess({ courseId, courseSlug, priceKobo, isPreview, child
       <span className="mx-auto grid size-12 place-items-center rounded-pill bg-sunken text-muted">
         <Icon name="lock" className="size-6" />
       </span>
-      <h2 className="mt-4 text-2xl font-semibold">Enrol to continue</h2>
+      <h2 className="mt-4 text-2xl font-semibold">Enroll to continue</h2>
       <p className="mx-auto mt-2 max-w-md text-muted">
-        {free ? 'This course is free. Enrol to unlock every lesson and track your progress.' : 'Enrol to unlock every lesson, take the quizzes and earn a certificate.'}
+        {free ? 'This course is free. Enroll to unlock every lesson and track your progress.' : 'Enroll to unlock every lesson, take the quizzes and earn a certificate.'}
       </p>
       <div className="mt-6 flex flex-col items-center gap-2">
         <button type="button" className={buttonClass('primary', 'lg')} onClick={() => progressActions.enroll(courseId)}>
-          {free ? 'Enrol for free' : `Enrol for ${formatPrice(priceKobo)}`}
+          {free ? 'Enroll for free' : `Enroll for ${formatPrice(priceKobo)}`}
         </button>
         {!free && <p className="text-xs text-muted">Demo checkout: no payment is taken.</p>}
       </div>

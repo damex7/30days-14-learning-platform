@@ -51,7 +51,7 @@ function OutlineNav({ courseId, courseSlug, modules }: Props) {
                         {complete ? (
                           <Icon name="checkCircle" className="size-4.5 text-leaf" label="Completed" />
                         ) : locked ? (
-                          <Icon name="lock" className="size-4.5 text-subtle" label="Locked until you enrol" />
+                          <Icon name="lock" className="size-4.5 text-subtle" label="Locked until you enroll" />
                         ) : (
                           <Icon name="circle" className="size-4.5 text-line-strong" label="Not completed" />
                         )}

@@ -101,7 +101,7 @@ export default async function CoursePage({ params }: PageProps<'/courses/[slug]'
             </div>
 
             {/* Enroll card */}
-            <aside aria-label="Enrol" className="self-start overflow-hidden rounded-card border border-line bg-raised shadow-raised lg:sticky lg:top-20">
+            <aside aria-label="Enrollment" className="self-start overflow-hidden rounded-card border border-line bg-raised shadow-raised lg:sticky lg:top-20">
               <CourseCover cover={outline.cover} priority />
               <div className="space-y-4 p-5">
                 <PriceTag priceKobo={outline.priceKobo} className="text-3xl" />
