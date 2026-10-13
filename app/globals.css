@@ -1,26 +1,204 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * ÌMỌ̀ DESIGN TOKENS: palette "Adire".
+ * Adire is the indigo resist-dyed cloth of Abeokuta and Ibadan. The page is
+ * warm unbleached cotton, the brand colour is indigo dye, and the accent is
+ * kola-nut red. Category tones (leaf, sun, plum) come from the same dye pots.
+ *
+ * Every colour is defined ONCE here, holding both values in
+ * light-dark(light, dark). The browser picks one from the page's
+ * `color-scheme`, which the theme toggle controls through data-theme. So
+ * components never need `dark:` classes for colour.
+ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* `--color-*: initial` removes Tailwind's default palette, so a stray
+   `bg-blue-600` doesn't exist instead of quietly going off-brand. */
+@theme {
+  --color-*: initial;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Surfaces: page, raised (cards, menus), sunken (wells, code, table heads). */
+  --color-paper: light-dark(#fbf6ee, #15130f);
+  --color-raised: light-dark(#fffdf8, #1e1b17);
+  --color-sunken: light-dark(#f3ebdd, #0f0d0b);
+  --color-line: light-dark(#e7dcc9, #342e27);
+  --color-line-strong: light-dark(#d1c1a6, #4b4238);
+
+  /* Text. */
+  --color-ink: light-dark(#1f1b16, #f3ece1);
+  --color-muted: light-dark(#5b5247, #b9ae9f);
+  --color-subtle: light-dark(#7d7366, #8e8477);
+
+  /* Brand: adire indigo. `brand-ink` is text placed ON a brand background. */
+  --color-brand: light-dark(#233f73, #a3b8e8);
+  --color-brand-hover: light-dark(#1a3060, #bccbf0);
+  --color-brand-ink: light-dark(#ffffff, #0f1a30);
+  --color-brand-soft: light-dark(#e4e9f4, #1c2740);
+
+  /* Accent: kola red. Used sparingly for highlights and the logo dot. */
+  --color-accent: light-dark(#b04a22, #ee9467);
+  --color-accent-soft: light-dark(#f7e3d6, #3a2117);
+
+  /* Status and category tones (text colour / soft background). Badges always
+     show a word too, so colour is never the only signal. */
+  --color-leaf: light-dark(#2c6a44, #86cf9e);
+  --color-leaf-soft: light-dark(#e1efe4, #16301f);
+  --color-sun: light-dark(#8a5a0a, #eabd66);
+  --color-sun-soft: light-dark(#fbefd5, #3a2b0f);
+  --color-plum: light-dark(#6e3a6c, #dcaad9);
+  --color-plum-soft: light-dark(#f2e4f0, #33192f);
+  --color-danger: light-dark(#a8382a, #f39a8a);
+  --color-danger-soft: light-dark(#fae3de, #3d1712);
+
+  --color-focus: light-dark(#c2650f, #f2b46a);
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Typography. The variables come from next/font in app/layout.tsx. */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* Radii, named by purpose. */
+  --radius-control: 0.625rem;
+  --radius-card: 1.125rem;
+  --radius-pill: 999px;
+
+  /* Shadows tinted warm brown rather than grey. */
+  --shadow-card: 0 1px 2px rgb(60 40 20 / 0.06), 0 1px 1px rgb(60 40 20 / 0.04);
+  --shadow-raised: 0 10px 28px -12px rgb(60 40 20 / 0.22), 0 2px 6px -2px rgb(60 40 20 / 0.08);
+
+  --container-content: 72rem;
+  --container-reading: 42rem;
+  --breakpoint-xs: 22.5rem; /* 360px: the smallest phone we design for */
+
+  --animate-rise: rise 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+  }
+  @keyframes shimmer {
+    from { background-position: 150% 0; }
+    to { background-position: -50% 0; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/*
+ * THEME SWITCHING. `color-scheme` decides which side of light-dark() wins.
+ * - No attribute (no saved choice, or JavaScript off): follow the OS.
+ * - data-theme="light" | "dark": set before first paint by the script in
+ *   app/layout.tsx, so there is no flash of the wrong theme.
+ */
+:root {
+  color-scheme: light dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* For the rare `dark:` that isn't a colour. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* One clear focus ring for keyboard users everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+
+  /* Native <details> markers are replaced by our own chevrons. */
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Skeleton shimmer used by loading.tsx files. */
+@utility skeleton {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-sunken) 0%,
+    var(--color-line) 50%,
+    var(--color-sunken) 100%
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+  border-radius: var(--radius-control);
+}
+
+/*
+ * REDUCED MOTION: people who ask their OS for less motion get none.
+ * Progress bars still change, they just don't animate.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * PRINT: used by the certificate page. Everything marked `print:hidden`
+ * (header, footer, buttons) disappears; the certificate fills an A4 page in
+ * landscape, always in the light theme, with colours kept.
+ */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
