@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Ìmọ̀ app icon: a serif "Ì" in cream on adire indigo, with the logo's kola-red dot.
+       Drawn as shapes, not text, because a favicon can't load web fonts. -->
+  <rect width="32" height="32" rx="7" fill="#233f73"/>
+  <g fill="#fbf3e4">
+    <rect x="10.5" y="11" width="11" height="2.6" rx="1"/>
+    <rect x="14" y="12" width="4" height="12"/>
+    <rect x="10.5" y="22.6" width="11" height="2.6" rx="1"/>
+  </g>
+  <path d="M12.6 4.8 17.4 8.8" stroke="#fbf3e4" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="25.2" cy="23.9" r="2.4" fill="#f0875a"/>
+</svg>
