@@ -4,16 +4,21 @@
 // footer; (learn) has the calm lesson player with a slim bar instead.
 
 import type { Metadata, Viewport } from 'next'
-import { Be_Vietnam_Pro, Fraunces, JetBrains_Mono } from 'next/font/google'
+import { Be_Vietnam_Pro, JetBrains_Mono, Literata } from 'next/font/google'
 import { site } from '@/lib/site'
 import { themeScript } from '@/lib/theme'
 import './globals.css'
 
 // next/font downloads the fonts at build time and serves them from this
 // site: no request to Google from the learner's browser and no layout jump.
-// All three include the `vietnamese` subset, which carries the dot-below
-// letters and combining tone marks Yoruba needs (Ì, ọ̀, ẹ́, ṣ).
-const fraunces = Fraunces({ subsets: ['latin', 'latin-ext', 'vietnamese'], axes: ['SOFT', 'opsz'], variable: '--font-fraunces' })
+//
+// YORUBA CHECK: Yoruba stacks a tone mark on top of a dot-below letter
+// (ọ̀, ẹ́), and there is no single character for that: it is ọ followed by a
+// COMBINING accent, which the font must position. Having the letters is not
+// enough. Both fonts were picked after rendering "Ìmọ̀ · Adébáyọ̀ Ọlọ́lá ·
+// ẹ̀kọ́" side by side: several popular display serifs drop or misplace the
+// accent. The `vietnamese` subset carries the combining marks.
+const literata = Literata({ subsets: ['latin', 'latin-ext', 'vietnamese'], axes: ['opsz'], variable: '--font-literata' })
 const beVietnam = Be_Vietnam_Pro({
   subsets: ['latin', 'latin-ext', 'vietnamese'],
   weight: ['400', '500', '600', '700'],
@@ -45,7 +50,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       // <html> and the browser's may differ on purpose. This silences that
       // one expected warning (it applies to this element only).
       suppressHydrationWarning
-      className={`${fraunces.variable} ${beVietnam.variable} ${jetbrains.variable}`}
+      className={`${literata.variable} ${beVietnam.variable} ${jetbrains.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

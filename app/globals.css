@@ -50,13 +50,18 @@
   --color-danger: light-dark(#a8382a, #f39a8a);
   --color-danger-soft: light-dark(#fae3de, #3d1712);
 
+  /* The video "stage": deep indigo in BOTH themes, so the player stays calm
+     and dark instead of turning pale blue in dark mode. */
+  --color-stage: light-dark(#233f73, #1a2a4c);
+  --color-stage-ink: #fbf3e4;
+
   --color-focus: light-dark(#c2650f, #f2b46a);
   --color-white: #ffffff;
   --color-transparent: transparent;
   --color-current: currentColor;
 
   /* Typography. The variables come from next/font in app/layout.tsx. */
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-literata), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "Cascadia Mono", Consolas, monospace;
 
