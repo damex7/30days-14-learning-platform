@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <pattern id="adire" width="75" height="75" patternUnits="userSpaceOnUse">
+      <rect width="75" height="75" fill="#6e3a6c"/>
+      <circle cx="18" cy="18" r="9" fill="none" stroke="#fbf3e4" stroke-width="3" opacity=".22"/>
+      <circle cx="18" cy="18" r="2.5" fill="#fbf3e4" opacity=".3"/>
+      <path d="M45 8h22M45 16h22M45 24h22" stroke="#fbf3e4" stroke-width="2.5" stroke-linecap="round" opacity=".18"/>
+      <path d="M8 45l10 10 10-10 10 10" fill="none" stroke="#fbf3e4" stroke-width="2.5" stroke-linecap="round" opacity=".2"/>
+      <path d="M56 60a9 9 0 1 1 0-14 7 7 0 1 0 0 14z" fill="#fbf3e4" opacity=".2"/>
+    </pattern>
+    <radialGradient id="glow" cx="70%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#fbf3e4" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#fbf3e4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#adire)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <g fill="none" stroke="#fbf3e4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="460" y="120" width="250" height="440" rx="36" fill="#6e3a6c"/>
+    <path d="M555 150h60"/><rect x="495" y="200" width="180" height="90" rx="12" stroke-width="8"/>
+    <path d="M495 330h180M495 370h120M495 410h150" stroke-width="8"/><rect x="495" y="470" width="180" height="50" rx="25" fill="#fbf3e4" stroke="none"/>
+    <circle cx="820" cy="250" r="40" fill="#fbf3e4" stroke="none"/><circle cx="820" cy="350" r="40"/><circle cx="820" cy="450" r="40" stroke-dasharray="4 14"/></g>
+</svg>

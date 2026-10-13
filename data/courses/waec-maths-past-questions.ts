@@ -25,7 +25,7 @@ export const waecMathsPastQuestions: CourseBundle = {
     requirements: ['Comfortable with SS2 algebra', 'A scientific calculator', 'Pencil and paper for working'],
     cover: {
       src: '/covers/waec-maths-past-questions.svg',
-      alt: 'Golden adire-style pattern with a parabola curve, a square-root sign and grid lines',
+      alt: 'Golden adire-style pattern with a parabola on a pair of axes and a square-root sign',
     },
     publishedAt: '2026-09-29',
     updatedAt: '2026-10-06',

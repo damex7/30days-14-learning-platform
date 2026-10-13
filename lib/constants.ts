@@ -56,9 +56,9 @@ export const PRICE_FILTER_LABELS = { free: 'Free', paid: 'Paid' } as const satis
 export const DURATION_FILTERS = ['short', 'medium', 'long'] as const
 export type DurationFilter = (typeof DURATION_FILTERS)[number]
 export const DURATION_BUCKETS = {
-  short: { label: 'Under 1 hour', min: 0, max: 60 * 60 },
-  medium: { label: '1 to 1½ hours', min: 60 * 60, max: 90 * 60 },
-  long: { label: 'Over 1½ hours', min: 90 * 60, max: Number.POSITIVE_INFINITY },
+  short: { label: 'Under 40 min', min: 0, max: 40 * 60 },
+  medium: { label: '40 to 55 min', min: 40 * 60, max: 55 * 60 },
+  long: { label: '55 min or more', min: 55 * 60, max: Number.POSITIVE_INFINITY },
 } as const satisfies Record<DurationFilter, { label: string; min: number; max: number }>
 
 /** Catalogue sort orders. The first one is the default. */

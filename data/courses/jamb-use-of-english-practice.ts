@@ -26,7 +26,7 @@ export const jambUseOfEnglish: CourseBundle = {
     requirements: ['Senior secondary level English', 'A notebook for your own word list'],
     cover: {
       src: '/covers/jamb-use-of-english-practice.svg',
-      alt: 'Golden adire-style pattern with an open book and a pencil ticking an answer box',
+      alt: 'Golden adire-style pattern with an open book and a ticked answer box',
     },
     publishedAt: '2026-01-19',
     updatedAt: '2026-07-28',

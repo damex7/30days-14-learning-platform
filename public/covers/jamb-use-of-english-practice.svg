@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <pattern id="adire" width="75" height="75" patternUnits="userSpaceOnUse">
+      <rect width="75" height="75" fill="#8a5a0a"/>
+      <circle cx="18" cy="18" r="9" fill="none" stroke="#fbf3e4" stroke-width="3" opacity=".22"/>
+      <circle cx="18" cy="18" r="2.5" fill="#fbf3e4" opacity=".3"/>
+      <path d="M45 8h22M45 16h22M45 24h22" stroke="#fbf3e4" stroke-width="2.5" stroke-linecap="round" opacity=".18"/>
+      <path d="M8 45l10 10 10-10 10 10" fill="none" stroke="#fbf3e4" stroke-width="2.5" stroke-linecap="round" opacity=".2"/>
+      <path d="M56 60a9 9 0 1 1 0-14 7 7 0 1 0 0 14z" fill="#fbf3e4" opacity=".2"/>
+    </pattern>
+    <radialGradient id="glow" cx="70%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#fbf3e4" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#fbf3e4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#adire)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <g fill="none" stroke="#fbf3e4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M600 210c-70-40-170-50-260-30v330c90-20 190-10 260 30 70-40 170-50 260-30V180c-90-20-190-10-260 30z" fill="#8a5a0a"/>
+    <path d="M600 210v330M400 260h130M400 310h130M400 360h100M670 260h130M670 310h130"/>
+    <rect x="760" y="380" width="110" height="110" rx="16" fill="#8a5a0a"/><path d="M785 435l25 25 45-50"/></g>
+</svg>

@@ -26,7 +26,7 @@ export const sellingOnWhatsApp: CourseBundle = {
     requirements: ['An Android phone or iPhone', 'The free WhatsApp Business app', 'Something to sell'],
     cover: {
       src: '/covers/selling-on-whatsapp-business.svg',
-      alt: 'Kola-red adire-style pattern with a chat bubble, a price tag and a folded piece of fabric',
+      alt: 'Kola-red adire-style pattern with a chat bubble and a price tag',
     },
     publishedAt: '2026-07-20',
     updatedAt: '2026-08-05',

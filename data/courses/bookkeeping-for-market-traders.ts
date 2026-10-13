@@ -24,7 +24,7 @@ export const bookkeepingForMarketTraders: CourseBundle = {
     requirements: ['A notebook and pen, or a phone with a notes or spreadsheet app', 'Basic adding and subtracting'],
     cover: {
       src: '/covers/bookkeeping-for-market-traders.svg',
-      alt: 'Green adire-style pattern with an open ledger book, coins and a basket of tomatoes',
+      alt: 'Green adire-style pattern with an open ledger book and a stack of coins',
     },
     publishedAt: '2026-05-11',
     updatedAt: '2026-05-11',

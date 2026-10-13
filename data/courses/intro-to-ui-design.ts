@@ -25,7 +25,7 @@ export const introToUiDesign: CourseBundle = {
     requirements: ['A free design tool account (any tool with frames and prototyping)', 'Comfortable using a computer', 'No design experience required'],
     cover: {
       src: '/covers/intro-to-ui-design.svg',
-      alt: 'Plum adire-style pattern with a phone outline showing layout blocks and a colour swatch',
+      alt: 'Plum adire-style pattern with a phone screen of layout blocks and three colour swatches',
     },
     publishedAt: '2026-06-08',
     updatedAt: '2026-09-21',
